@@ -1,14 +1,16 @@
-Proyecto final de Diseño de Software: “ReceTicas”
+ReceTicas
 =======
-Profesor: Andrei Fuentes Leiva
-Integrantes: Benjamín Calvo de León, Esteban Mora Soto, Diego Vásquez Valerio
-Fecha: 13 de Mayo de 2014
+Instituto Tecnológico de Costa Rica
+Diseño de Software
+
+Profesor
+=======
+Andrei Fuentes Leiva
+
 
 Integrantes:
 =======
-*Benjamín Calvo de León
-*Esteban Mora Soto
-*Diego Vásquez Valerio
+Benjamín Calvo de León, Esteban Mora Soto y Diego Vásquez Valerio
 
 
 Propósito
