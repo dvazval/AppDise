@@ -1,6 +1,6 @@
 ReceTicas
 =======
-Instituto Tecnológico de Costa Rica - Diseño de Software
+Instituto Tecnológico de Costa Rica - Escuela de Ingeniería en Computación - Diseño de Software
 
 Profesor
 =======
