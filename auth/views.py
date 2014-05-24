@@ -5,7 +5,7 @@ from django.shortcuts import render
 from django.contrib.auth import authenticate, login
 
 def login_user(request):
-    state = "Please log in below..."
+    state = "Por favor ingrese su nombre de usuario y contraseña para iniciar sessión."
     username = password = ''
     if request.POST:
         username = request.POST.get('username')
@@ -15,10 +15,10 @@ def login_user(request):
         if user is not None:
             if user.is_active:
                 login(request, user)
-                state = "You're successfully logged in!"
+                state = "Bienvenido " + username 
             else:
-                state = "Your account is not active, please contact the site admin."
+                state = "Su cuenta no esta activada, por favor contacte con el administrador del sitio."
         else:
-            state = "Your username and/or password were incorrect."
+            state = "Su nombre de usuario y/o contraseña son incorrectos."
 
-    return render(request,'auth.html',{'state':state, 'username': username})
+    return render(request,'home.html',{'state':state, 'username': username})
