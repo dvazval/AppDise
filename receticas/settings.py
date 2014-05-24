@@ -55,13 +55,24 @@ WSGI_APPLICATION = 'receticas.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 
+#DATABASES = {
+#    'default': {
+#	'ENGINE': 'django.db.backends.postgresql_psycopg2',        
+#	'NAME': 'proyecto',        
+#        'USER': 'developer',
+#        'PASSWORD': 'solaris',
+#	'HOST': '127.0.0.1',
+#        'PORT': '5432'
+#    },
+#}
+
 DATABASES = {
     'default': {
 	'ENGINE': 'django.db.backends.postgresql_psycopg2',        
-	'NAME': 'proyecto',        
-        'USER': 'developer',
-        'PASSWORD': 'solaris',
-	'HOST': '127.0.0.1',
+	'NAME': 'daugdc4hd92tjp',        
+        'USER': 'giqgsvfpiebivh',
+        'PASSWORD': 'VSeuYO-ehfx-FSGC01GJiFJjO-',
+	'HOST': 'ec2-54-243-49-204.compute-1.amazonaws.com',
         'PORT': '5432'
     },
 }
@@ -81,8 +92,8 @@ USE_TZ = True
 
 
 # Parse database configuration from $DATABASE_URL
-import dj_database_url
-DATABASES['default'] =  dj_database_url.config()
+#import dj_database_url
+#DATABASES['default'] =  dj_database_url.config()
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
