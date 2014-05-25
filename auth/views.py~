@@ -15,7 +15,7 @@ def login_user(request):
         if user is not None:
             if user.is_active:
                 login(request, user)
-                state = "Bienvenido " + username 
+                state = "Bienvenido " 
             else:
                 state = "Su cuenta no esta activada, por favor contacte con el administrador del sitio."
         else:
