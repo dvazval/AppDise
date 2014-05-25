@@ -5,7 +5,7 @@ from django.shortcuts import render
 from django.contrib.auth import authenticate, login
 
 def login_user(request):
-    state = "Por favor ingrese su nombre de usuario y contrasena para iniciar sessión."
+    state = "Por favor ingrese su nombre de usuario y contrasena para iniciar session."
     username = password = ''
     if request.POST:
         username = request.POST.get('username')
