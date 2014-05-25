@@ -21,4 +21,4 @@ def login_user(request):
         else:
             state = "Su nombre de usuario y/o contrasena son incorrectos."
 
-    return render(request,'login.html',{'state':state, 'username': username})
+    return render(request,'auth.html',{'state':state, 'username': username})
