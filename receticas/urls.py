@@ -11,4 +11,5 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^login/$', 'auth.views.login_user'),
     url(r'^home/$', 'receticas.views.home'),
+   
 )

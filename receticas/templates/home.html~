@@ -13,7 +13,7 @@
 		<![endif]-->
 		<link href="{{ STATIC_URL }}css/styles.css" rel="stylesheet">
 	</head>
-	<body background="{{ STATIC_URL }}/tablacircular.jpg" style="background-position: 60% 25%;"  >
+	<body background="{{ STATIC_URL }}/tabla.jpg" style="background-position: 60% 25%;"  >
 <!--login modal-->
 <div id="loginModal" class="modal show" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog">
@@ -22,7 +22,9 @@
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 	  <img  class="img-responsive center-block" src="{{ STATIC_URL }}/receticas.png" alt="Logo">
       </div>
-	
+{% if next %}
+	{{ state }}
+{% endif %}
       <div class="modal-body" >
           <form action="/login/" class="form col-md-12 center-block" method="post">
 		{% if next %}
@@ -32,12 +34,8 @@
               <input type="text" class="form-control input-lg" placeholder="Nombre de usuario" name="username" value="{{ username}}">
             </div>
             <div class="form-group">
-              <input type="password" class="form-control input-lg" placeholder="Contraseña" name="password" value="">
+              <input type="password" class="form-control input-lg" placeholder="Contrasena" name="password" value="">
             </div>
-		<div style="text-align: center;">
-		    {{ state }}
-		</div>
-		
             <div class="form-group">
               <button class="btn btn-primary btn-lg btn-block">Iniciar sesión</button>
             </div>

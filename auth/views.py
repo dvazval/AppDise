@@ -15,7 +15,8 @@ def login_user(request):
         if user is not None:
             if user.is_active:
                 login(request, user)
-                state = "Bienvenido " 
+                state = "Bienvenido a Receticas, "+  username + "."
+		return render(request,'home.html',{'state':state, 'username': username}) 
             else:
                 state = "Su cuenta no esta activada, por favor contacte con el administrador del sitio."
         else:

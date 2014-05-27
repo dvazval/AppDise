@@ -1,0 +1,7 @@
+from django.contrib.auth.views import login
+
+def home(request):
+    if request.user.is_authenticated():
+        return HttpResponseRedirect(...)
+    else:
+        return login(request)
