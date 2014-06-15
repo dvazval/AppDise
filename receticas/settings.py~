@@ -26,6 +26,8 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+ACCOUNT_EMAIL_VERIFICATION = ("mandatory")
 
 # Application definition
 
@@ -86,7 +88,7 @@ ROOT_URLCONF = 'receticas.urls'
 WSGI_APPLICATION = 'receticas.wsgi.application'
 
 
-LOGIN_REDIRECT_URL= '/login/'
+LOGIN_REDIRECT_URL= '/rece/'
 
 
 # Database
