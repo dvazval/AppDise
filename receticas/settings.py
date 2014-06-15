@@ -86,7 +86,7 @@ ROOT_URLCONF = 'receticas.urls'
 WSGI_APPLICATION = 'receticas.wsgi.application'
 
 
-LOGIN_REDIRECT_URL= '/home/'
+LOGIN_REDIRECT_URL= '/login/'
 
 
 # Database

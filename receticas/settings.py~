@@ -86,6 +86,9 @@ ROOT_URLCONF = 'receticas.urls'
 WSGI_APPLICATION = 'receticas.wsgi.application'
 
 
+LOGIN_REDIRECT_URL= '/home/'
+
+
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 
