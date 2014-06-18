@@ -13,5 +13,4 @@ urlpatterns = patterns('',
     url(r'^home/$', 'receticas.views.home'),
     url(r'^accounts/', include('allauth.urls')),
     url(r'^rece/', 'receticas.views.index'),
-   
 )

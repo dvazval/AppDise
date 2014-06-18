@@ -17,7 +17,6 @@
 		<script src="/static/js/skel.min.js"></script>
 		<script src="/static/js/skel-panels.min.js"></script>
 		<script src="/static/js/init.js"></script>
-		<link rel="stylesheet" type="text/css" href='/static/css/style3.css'/>
 			<link rel="stylesheet" href="/static/css/skel-noscript.css" />
 			<link rel="stylesheet" href="/static/css/style.css" />
 			<link rel="stylesheet" href="/static/css/style-desktop.css" />
@@ -27,12 +26,20 @@
 			<div class="container">
 				<div id="logo"> <!-- Logo -->
 					<h1><a href="index.html">Receticas</a></h1>
+					<p>Inicio de sessión.</p>
 				</div>
 
 			</div>
 		</div>
 	</div>
 	<div id="wrapper">
+		<div class="container">
+			<div class="row">
+				<div id="banner" class="12u">
+					<div class="container"><a href="#"><img src="/static/images/pics01.jpg" alt=""></a></div>
+				</div>
+			</div>
+		</div>
 		<div id="page">
 			<div class="container">
 				<div class="row">
@@ -43,22 +50,14 @@
 						<div class="skel-cell-important" id="content">
 							<section>
 								<div class="post">
-									{% block body %}
-									    {% if messages %}
-										<div>
-										    <strong>Messages:</strong>
-										    <ul>
-											{% for message in messages %}
-											    <li>{{message}}</li>
-											{% endfor %}
-										    </ul>
-										</div>
-									    {% endif %}
-									    {% block content %}
-									    {% endblock %}
-									{% endblock %}
-									{% block extra_body %}
-									{% endblock %}
+
+
+
+
+
+
+
+
 								</div>
 							</section>
 						</div>
