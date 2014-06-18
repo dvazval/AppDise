@@ -9,7 +9,7 @@
 
 {% if request.user.is_authenticated %}
     <a href="/accounts/logout/" class="pull-right">Logout</a>
-    <img src="{{ request.user.profile.profile_image_url }}" alt="{{ request.user.profile.profile_image_url }}"/>
+    <img src="http://graph.facebook.com/{{ request.user.username }}/picture" alt="{{ request.user.profile.profile_image_url }}"/>
     {% if request.user.first_name or request.user.last_name %}
         {{ request.user.first_name }} {{ request.user.last_name }}
     {% else %}
