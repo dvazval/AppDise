@@ -61,12 +61,20 @@
             <link type="image/x-icon" rel="icon" href="./images/favicon.ico"></link>
         </head>
         <body>
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=527581757365186&version=v2.0";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
             <header>	
             </header>
             <nav>
 				<ul class="menu">
                     <li>
-                        <a href="{% url 'rece' %}">Inicio</a>
+                        <a href="http://www.receticas.biz/rece/">Inicio</a>
                     </li>
                     <li>
                         <a href="{% url 'recetarios' %}">Recetarios </a>
@@ -93,7 +101,7 @@
                     <div> MENU</div>
                     <select onchange="location=this.value">
 				<option></option>
-				<option value="{% url 'rece' %}">Inicio</option>
+				<option value="http://www.receticas.biz/rece/">Inicio</option>
 				<option value="{% url 'recetarios' %}">Recetarios</option>
 				<option value="{% url 'recetas' %}">Recetas</option>
 				<option value="single.html">Acerca de ReceTicas</option>
