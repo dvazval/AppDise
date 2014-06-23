@@ -78,7 +78,6 @@ urlpatterns = patterns('',
     url(r'paso/(?P<pk>\d+)/delete/$', PasoDelete.as_view(), name='paso_delete'),
     ####################Ingredientes
 
-
     #####################Junnar
 
 )

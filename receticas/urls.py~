@@ -80,7 +80,5 @@ urlpatterns = patterns('',
 
 
     #####################Junnar
-    url(r'actJunnar/$', actJunnar.as_view(), name='actJunnar'),
-
 
 )
