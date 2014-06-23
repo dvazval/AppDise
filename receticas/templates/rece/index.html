@@ -3,9 +3,39 @@
 {% include "baseHeader.html" %}
 
 
-<h2>Receta destacada del sitio.</h2><a href="#"><img src="/static/images/pics03.jpg" alt=""></a>
-<p>La receta <strong>Arroz con pollo</strong>, es una receta muy aclamada a nivel nacional la cual se ha distiguido por una.</p>
-<p class="button-style3"><a href="#">Read Full Article</a></p>
+<article>
+	<div class="heading">
+		<h2>Bienvenido a la pàgina de ReceTicas.</h2>
+			{% if request.user.is_authenticated %}
+			<div class="info">Usuario que esta en la pàgina: {% if request.user.first_name or request.user.last_name %}
+				{{ request.user.first_name }} {{ request.user.last_name }}
+			    {% else %}
+				{{ request.user.username }}
+			    {% endif %}.</div>
+			{% endif %}
+	</div>
+</article>
+<article>
+	<div class="heading">
+		<p><h2>Pinchoz de vegetales asados.</h2></p>
+	</div>
+	<div class="content">
+		<img src="images/port1.jpg"/>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elite.</p>
+	</div>
+</article>
+
+<article>
+	<div class="heading">
+		<p><h2>Actividad en las redes sociales.</h2></p>
+	</div>
+	<div class="content">
+		<div class="fb-activity" data-app-id="527581757365186" data-site="https://www.facebook.com/ReceTicas" data-action="likes, recommends" data-colorscheme="light" data-header="true"></div>
+	</div>
+</article>
+
+
+
 
 
 {% include "baseFooter.html" %}
