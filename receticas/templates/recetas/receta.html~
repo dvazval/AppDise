@@ -82,6 +82,8 @@
 									
 									<h1>{{ object.nombre }}</h1>
 									<ul>
+
+
 										<p>Nombre: {{ object.nombre }}</p>
 										<p>Descripcion: {{ object.descripcion }}</p>
 									</ul>
