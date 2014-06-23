@@ -91,12 +91,9 @@
 <div class="fb-like" data-href="http://www.receticas.biz/recetas/{{ object.idreceta }}/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
 <div class="fb-send" data-href="http://www.receticas.biz/recetas/&#123;&#123; object.idreceta &#125;&#125;/" data-colorscheme="light"></div>
 
-Footer
-<div class="fb-follow" data-href="https://www.facebook.com/ReceTicas" data-colorscheme="light" data-layout="standard" data-show-faces="true"></div>
-<div class="fb-like-box" data-href="https://www.facebook.com/ReceTicas" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
 
 Homepage
-<div class="fb-activity" data-app-id="527581757365186" data-site="https://www.facebook.com/ReceTicas" data-action="likes, recommends" data-colorscheme="light" data-header="true"></div>
+
 								</div>
 							</section>
 						</div>

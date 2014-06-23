@@ -159,7 +159,7 @@
 									<h1>Recetarios</h1>
 									<ul>
 									{% for recetario in object_list %}
-									    <li><a href="http://localhost:5000/recetarios/{{  recetario.idrecetario }}/"> {{ recetario.nombrer }} - {{ recetario.idrecetario }} </a>  </li>
+									    <li><a href="http://www.receticas.biz/recetarios/{{  recetario.idrecetario }}/"> {{ recetario.nombrer }} - {{ recetario.idrecetario }} </a>  </li>
 									{% empty %}
 									    <li>No Recepies yet.</li>
 									{% endfor %}
