@@ -175,31 +175,23 @@
 										<tr>Acciones</tr>
 
 							
-										<tr>
+										
 										{% for receta in object_list %}
-											<td>{{ receta.nombre }}</td>
+										<tr>										
+										<td>{{ receta.nombre }}</td>
 											<td><a href="http://www.receticas.biz/recetas/{{  receta.idreceta }}/"> Detalles </a></td>
 											<td>
-
-<a href="http://www.receticas.biz/recet/{{  receta.idreceta }}/"><img src="/static/images/editar.jpg" alt=""></a>
-<a href="http://www.receticas.biz/recet/{{  receta.idreceta }}/delete/"><img src="/static/images/pics01.jpg" alt=""></a>
-<a href="http://www.receticas.biz/pasos/{{  receta.idreceta }}/""><img src="/static/images/pics01.jpg" alt=""></a>
-<a href="http://www.receticas.biz/ingredientes/{{  receta.idreceta }}/"><img src="/static/images/pics01.jpg" alt=""></a>
-
-| <a href="http://www.receticas.biz/pasos/{{  receta.idreceta }}/">  Pasos  </a>
-| <a href="http://www.receticas.biz/ingredientes/{{  receta.idreceta }}/"> Ingredientes </a>
-
-| <a href="http://www.receticas.biz/recet/{{  receta.idreceta }}/"> Editar </a> 
-| <a href="http://www.receticas.biz/recet/{{  receta.idreceta }}/delete/"> Borrar </a> 
-| <a href="http://www.receticas.biz/pasos/{{  receta.idreceta }}/">  Pasos  </a>
-| <a href="http://www.receticas.biz/ingredientes/{{  receta.idreceta }}/"> Ingredientes </a> 
- 
+												<a href="http://www.receticas.biz/recet/{{  receta.idreceta }}/"><img src="/static/images/editar.png" alt=""></a>
+												<a href="http://www.receticas.biz/recet/{{  receta.idreceta }}/delete/"><img src="/static/images/eliminar.png" alt=""></a>
+												<a href="http://www.receticas.biz/pasos/{{  receta.idreceta }}/""><img src="/static/images/reservar.png" alt=""></a>
+												<a href="http://www.receticas.biz/ingredientes/{{  receta.idreceta }}/"><img src="/static/images/reservar.png" alt=""></a>
 										    	</td>
 
 										{% empty %}
 										    <li>No Recepies yet.</li>
-										{% endfor %}
 										</tr>
+										{% endfor %}
+										
   									</table>
 									</div>
 									</ul>
