@@ -189,7 +189,7 @@ class IngredienteXReceta(models.Model):
         db_table = 'ingrediente_x_receta'
 
 class Pasos(models.Model):
-    idpaso = models.IntegerField(unique=True)
+    idpaso = models.IntegerField(unique=True, primary_key=True)
     idreceta = models.ForeignKey('Receta', db_column='idreceta', blank=True, null=True)
     pasonumero = models.IntegerField(blank=True, null=True)
     contenido = models.CharField(max_length=1024, blank=True)
@@ -198,7 +198,7 @@ class Pasos(models.Model):
         db_table = 'pasos'
 
 class Receta(models.Model):
-    idreceta = models.IntegerField(unique=True,primary_key=True)#primary_key=True
+    idreceta = models.IntegerField(unique=True, primary_key=True)#primary_key=True
     idrecetario = models.ForeignKey('Recetario', db_column='idrecetario', blank=True, null=True)
     nombre = models.CharField(max_length=1024, blank=True)
     tiempo = models.CharField(max_length=1, blank=True)
@@ -207,20 +207,23 @@ class Receta(models.Model):
         managed = False
         db_table = 'receta'
 
-    def get_absolute_url(self):
-	#return HttpResponseRedirect('recetas')
-        return reverse('receta', kwargs={'pk': self.idreceta})
+    #def get_absolute_url(self):
+     #   return reverse('receta', kwargs={'pk': self.idreceta})
 
 
 
 class Recetario(models.Model):
-    idrecetario = models.IntegerField(unique=True)
+    idrecetario = models.IntegerField(unique=True, primary_key=True)
     idusuario = models.ForeignKey(AuthUser, db_column='idusuario', blank=True, null=True)
     nombrer = models.CharField(max_length=1024, blank=True)
     descripcionr = models.CharField(max_length=1024, blank=True)
     class Meta:
         managed = False
         db_table = 'recetario'
+
+    #def get_absolute_url(self):
+     #   return reverse('recetario', kwargs={'pk': self.idrecetario})
+
 
 class SocialaccountSocialaccount(models.Model):
     id = models.IntegerField(primary_key=True)

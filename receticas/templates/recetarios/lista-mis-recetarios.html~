@@ -48,12 +48,10 @@
 				<nav id="nav">
 					<ul>
 						<li class="current_page_item"><a href="index.html">Inicio</a></li>
-						<li><a href="{% url 'recetarios' %}">Recetarios</a></li>
-						<li><a href="{% url 'recetas' %}">Recetas</a></li>
+						<li><a href="recetarios.html">Recetarios</a></li>
+						<li><a href="recetas.html">Recetas</a></li>
 						<li><a href="acercade.html">Acerca de receticas</a></li>
 						<li><a href="mapasitio.html">Mapa del sitio</a></li>
-						<li><a href="{% url 'misreceticas' %}">Mis Receticas</a></li>
-						{% if request.user.id == 1 %}<li><a href="{% url 'misreceticas' %}">Actualizar Junnar</a></li>{% else %} {% endif %}
 					</ul>
 				</nav>
 			</div>
@@ -157,9 +155,24 @@
 						<div class="skel-cell-important" id="content">
 							<section>
 								<div class="post">
-									<h2>Receta destacada del sitio.</h2><a href="#"><img src="/static/images/pics03.jpg" alt=""></a>
-									<p>La receta <strong>Arroz con pollo</strong>, es una receta muy aclamada a nivel nacional la cual se ha distiguido por una.</p>
-									<p class="button-style3"><a href="#">Read Full Article</a></p>
+									
+									<h1>Recetarios</h1>
+									<a href="http://localhost:5000/recetario/add/"> Crear Nuevo  </a> 
+									<ul>
+									{% for recetario in object_list %}
+									    <li>
+
+<a href="http://localhost:5000/recetasRecetarioUsuario/{{  recetario.idrecetario }}/"> {{ recetario.nombrer }} - {{ recetario.idrecetario }} </a> 
+| <a href="http://localhost:5000/recetario/{{  recetario.idrecetario }}/"> Editar </a>  
+| <a href="http://localhost:5000/recetario/{{  recetario.idrecetario }}/delete/"> Borrar </a>
+
+										</li>
+
+
+									{% empty %}
+									    <li>No Recepies yet.</li>
+									{% endfor %}
+									</ul>
 								</div>
 							</section>
 						</div>

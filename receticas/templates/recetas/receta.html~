@@ -1,0 +1,2 @@
+<p>Reporter: {{ object.nombre }}</p>
+<p>Published: {{ object.descripcion }}</p>

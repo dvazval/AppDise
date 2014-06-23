@@ -35,7 +35,7 @@
 				    {% else %}
 					{{ request.user.username }}
 				    {% endif %}
-				    {% if request.user.profile.account_verified %} (verified) {% else %} (unverified) {% endif %}
+				   
 
 				{% else %}
 				    <a href="/accounts/login/" class="pull-right">Login</a>
@@ -48,10 +48,12 @@
 				<nav id="nav">
 					<ul>
 						<li class="current_page_item"><a href="index.html">Inicio</a></li>
-						<li><a href="recetarios.html">Recetarios</a></li>
-						<li><a href="recetas.html">Recetas</a></li>
+						<li><a href="{% url 'recetarios' %}">Recetarios</a></li>
+						<li><a href="{% url 'recetas' %}">Recetas</a></li>
 						<li><a href="acercade.html">Acerca de receticas</a></li>
 						<li><a href="mapasitio.html">Mapa del sitio</a></li>
+						<li><a href="{% url 'misreceticas' %}">Mis Receticas</a></li>
+						{% if request.user.id == 1 %}<li><a href="{% url 'actJunnar' %}">Actualizar Junnar</a></li>{% else %} {% endif %}
 					</ul>
 				</nav>
 			</div>
