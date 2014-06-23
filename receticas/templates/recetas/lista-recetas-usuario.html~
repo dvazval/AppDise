@@ -19,6 +19,16 @@
 			<link rel="stylesheet" href="/static/css/skel-noscript.css" />
 			<link rel="stylesheet" href="/static/css/style.css" />
 			<link rel="stylesheet" href="/static/css/style-desktop.css" />
+	
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
 	</head><body class="homepage">
 	<div id="header-wrapper">
 		<div id="header">
@@ -158,18 +168,40 @@
 									
 									<h1>Recetas</h1>
 									<ul>
-									{% for receta in object_list %}
-									    <li>
-| <a href="http://www.receticas.biz/recetas/{{  receta.idreceta }}/"> {{ receta.nombre }} - Detalles </a> 
+									<div class="table-responsive">
+									<table class="table table-hover">
+    										<tr>Nombre</tr>
+										<tr>Detalles</tr>
+										<tr>Acciones</tr>
+
+							
+										<tr>
+										{% for receta in object_list %}
+											<td>{{ receta.nombre }}</td>
+											<td><a href="http://www.receticas.biz/recetas/{{  receta.idreceta }}/"> Detalles </a></td>
+											<td>
+
+<a href="http://www.receticas.biz/recet/{{  receta.idreceta }}/"><img src="/static/images/editar.jpg" alt=""></a>
+<a href="http://www.receticas.biz/recet/{{  receta.idreceta }}/delete/"><img src="/static/images/pics01.jpg" alt=""></a>
+<a href="http://www.receticas.biz/pasos/{{  receta.idreceta }}/""><img src="/static/images/pics01.jpg" alt=""></a>
+<a href="http://www.receticas.biz/ingredientes/{{  receta.idreceta }}/"><img src="/static/images/pics01.jpg" alt=""></a>
+
+| <a href="http://www.receticas.biz/pasos/{{  receta.idreceta }}/">  Pasos  </a>
+| <a href="http://www.receticas.biz/ingredientes/{{  receta.idreceta }}/"> Ingredientes </a>
+
 | <a href="http://www.receticas.biz/recet/{{  receta.idreceta }}/"> Editar </a> 
 | <a href="http://www.receticas.biz/recet/{{  receta.idreceta }}/delete/"> Borrar </a> 
 | <a href="http://www.receticas.biz/pasos/{{  receta.idreceta }}/">  Pasos  </a>
-| <a href="http://www.receticas.biz/ingredientes/{{  receta.idreceta }}/"> Ingredientes </a>  
-									    </li>
+| <a href="http://www.receticas.biz/ingredientes/{{  receta.idreceta }}/"> Ingredientes </a> 
+ 
+										    	</td>
 
-									{% empty %}
-									    <li>No Recepies yet.</li>
-									{% endfor %}
+										{% empty %}
+										    <li>No Recepies yet.</li>
+										{% endfor %}
+										</tr>
+  									</table>
+									</div>
 									</ul>
 								</div>
 							</section>

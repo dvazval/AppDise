@@ -20,6 +20,14 @@
 			<link rel="stylesheet" href="/static/css/style.css" />
 			<link rel="stylesheet" href="/static/css/style-desktop.css" />
 	</head><body class="homepage">
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=527581757365186&version=v2.0";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
 	<div id="header-wrapper">
 		<div id="header">
 			<div class="container">
@@ -74,13 +82,26 @@
 									
 									<h1>{{ object.nombre }}</h1>
 									<ul>
+
+
 										<p>Nombre: {{ object.nombre }}</p>
 										<p>Descripcion: {{ object.descripcion }}</p>
 									</ul>
+									<div class="fb-comments" data-href="http://www.receticas.biz/recetas/{{ object.idreceta }}/" data-numposts="5" data-colorscheme="light"></div>
+<div class="fb-like" data-href="http://www.receticas.biz/recetas/{{ object.idreceta }}/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+<div class="fb-send" data-href="http://www.receticas.biz/recetas/&#123;&#123; object.idreceta &#125;&#125;/" data-colorscheme="light"></div>
+
+Footer
+<div class="fb-follow" data-href="https://www.facebook.com/ReceTicas" data-colorscheme="light" data-layout="standard" data-show-faces="true"></div>
+<div class="fb-like-box" data-href="https://www.facebook.com/ReceTicas" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
+
+Homepage
+<div class="fb-activity" data-app-id="527581757365186" data-site="https://www.facebook.com/ReceTicas" data-action="likes, recommends" data-colorscheme="light" data-header="true"></div>
 								</div>
 							</section>
 						</div>
 					</div>
+					
 
 					</div>
 				</div>
