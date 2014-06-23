@@ -53,7 +53,7 @@
 						<li><a href="acercade.html">Acerca de receticas</a></li>
 						<li><a href="mapasitio.html">Mapa del sitio</a></li>
 						<li><a href="{% url 'misreceticas' %}">Mis Receticas</a></li>
-						{% if request.user.id == 1 %}<li><a href="{% url 'misreceticas' %}">Actualizar Junnar</a></li>{% else %} {% endif %}
+						{% if request.user.id == 1 %}<li><a href="{% url 'actJunnar' %}">Actualizar Junnar</a></li>{% else %} {% endif %}
 					</ul>
 				</nav>
 			</div>

@@ -200,6 +200,3 @@ class PasoDelete(DeleteView):
     success_url = reverse_lazy('misreceticas')
 
 
-class actJunnar(DeleteView):
-    model = Pasos
-
