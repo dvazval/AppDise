@@ -157,15 +157,15 @@
 								<div class="post">
 									
 									<h1>Recetarios</h1>
-									<a href="http://localhost:5000/recetario/add/"> Crear Nuevo  </a> 
+									<a href="http://www.receticas.biz/recetario/add/"> Crear Nuevo  </a> 
 									<ul>
 									{% for recetario in object_list %}
 									    <li>
 
-<a href="http://localhost:5000/recetasRecetarioUsuario/{{  recetario.idrecetario }}/"> {{ recetario.nombrer }} - {{ recetario.idrecetario }} </a> 
-| <a href="http://localhost:5000/recetario/{{  recetario.idrecetario }}/"> Editar </a>  
-| <a href="http://localhost:5000/recetario/{{  recetario.idrecetario }}/delete/"> Borrar </a>
-| <a href="http://localhost:5000/recet/add/{{  recetario.idrecetario }}/"> Crear Nueva  </a>
+<a href="http://www.receticas.biz/recetasRecetarioUsuario/{{  recetario.idrecetario }}/"> {{ recetario.nombrer }} - {{ recetario.idrecetario }} </a> 
+| <a href="http://www.receticas.biz/recetario/{{  recetario.idrecetario }}/"> Editar </a>  
+| <a href="http://www.receticas.biz/recetario/{{  recetario.idrecetario }}/delete/"> Borrar </a>
+| <a href="http://www.receticas.biz/recet/add/{{  recetario.idrecetario }}/"> Crear Nueva  </a>
 
 										</li>
 

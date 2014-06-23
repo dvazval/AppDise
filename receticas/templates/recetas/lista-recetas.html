@@ -159,7 +159,7 @@
 									<h1>Recetas</h1>
 									<ul>
 									{% for receta in object_list %}
-									    <li><a href="http://localhost:5000/recetas/{{  receta.idreceta }}/"> {{ receta.nombre }} - {{ receta.idreceta }} </a>  </li>
+									    <li><a href="http://www.receticas.biz/recetas/{{  receta.idreceta }}/"> {{ receta.nombre }} - {{ receta.idreceta }} </a>  </li>
 									{% empty %}
 									    <li>No Recepies yet.</li>
 									{% endfor %}

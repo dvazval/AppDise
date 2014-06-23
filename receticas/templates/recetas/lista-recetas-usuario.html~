@@ -157,16 +157,14 @@
 								<div class="post">
 									
 									<h1>Recetas</h1>
-<a href="http://localhost:5000/paso/add/{{  receta.idreceta }}/"> Agregar pasos </a> 
-<a href="http://localhost:5000/ingrediente/add/{{  receta.idreceta }}/"> Agregar Ingregientes </a> 
 									<ul>
 									{% for receta in object_list %}
 									    <li>
-| <a href="http://localhost:5000/recetas/{{  receta.idreceta }}/"> {{ receta.nombre }} - Detalles </a> 
-| <a href="http://localhost:5000/recet/{{  receta.idreceta }}/"> Editar </a> 
-| <a href="http://localhost:5000/recet/{{  receta.idreceta }}/delete/"> Borrar </a> 
-| <a href="http://localhost:5000/pasos/{{  receta.idreceta }}/">  Pasos  </a>
-| <a href="http://localhost:5000/ingredientes/{{  receta.idreceta }}/"> Ingredientes </a>  
+| <a href="http://www.receticas.biz/recetas/{{  receta.idreceta }}/"> {{ receta.nombre }} - Detalles </a> 
+| <a href="http://www.receticas.biz/recet/{{  receta.idreceta }}/"> Editar </a> 
+| <a href="http://www.receticas.biz/recet/{{  receta.idreceta }}/delete/"> Borrar </a> 
+| <a href="http://www.receticas.biz/pasos/{{  receta.idreceta }}/">  Pasos  </a>
+| <a href="http://www.receticas.biz/ingredientes/{{  receta.idreceta }}/"> Ingredientes </a>  
 									    </li>
 
 									{% empty %}
