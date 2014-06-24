@@ -22,7 +22,7 @@ urlpatterns = patterns('',
     url(r'^accounts/', include('allauth.urls')),
     url(r'^rece/', 'receticas.views.index'),
     #################Recetas
-    url(r'^recetas/(?P<pk>\d+)/$', DetailView.as_view(
+    url(r'^recetas/(?P<pk>\d+)/$', RecetaDisplayView.as_view(
 	context_object_name="receta",
 	model=Receta,
 	#paginate_by = '5',
