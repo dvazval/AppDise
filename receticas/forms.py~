@@ -92,10 +92,10 @@ class CreatePaso(ModelForm):
 class CreateIngrediente(ModelForm):
     class Meta:
         model = IngredienteXReceta
-	#exclude = ('idreceta',)
+	exclude = ('idreceta',)
 	
-	idingrediente = forms.ChoiceField(choices= [ (o.idingrediente, o.articulo  ) for o in Ingrediente.objects.all()])
-
+	idingrediente = forms.ChoiceField(choices= [ ('Dasda', 'asdads'  ) for o in Ingrediente.objects.all()])
+	# o.idingrediente, o.articulo
     def __init__(self, *args, **kwargs):
         self.receta = kwargs.pop('receta')
         super(CreateIngrediente, self).__init__(*args, **kwargs)
