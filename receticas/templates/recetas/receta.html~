@@ -11,9 +11,10 @@
 	<div class="heading">
 		<p><h2>Ingredientes</h2></p>
 	</div>
+        <p>Gramos para solidos, ml para los liquidos</p>
 	<div class="content">
 		{% for ingrediente in ingredientes %}
-			<p>{{ ingrediente.idingrediente.articulo }} de {{ ingrediente.idingrediente.peso }} a {{ ingrediente.idingrediente.precio }}</p>
+			<p>{{ ingrediente.idingrediente.peso }} de {{ ingrediente.idingrediente.articulo }} - Costo aproximado {{ ingrediente.idingrediente.precio }} colones.</p>
 		{% empty %}
 			<p>No tiene ingredientes.</p>
 		{% endfor %}
