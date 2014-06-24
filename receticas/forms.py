@@ -88,3 +88,22 @@ class CreatePaso(ModelForm):
 	m.idreceta_id = self.receta
 	m.save()
 
+
+class CreatePaso(ModelForm):
+    class Meta:
+        model = IngredienteXReceta
+	exclude = ('idreceta')
+
+    idingrediente = forms.ChoiceField(choices=[ (o.idingrediente, o.articulo  ) for o in IngredienteXReceta.objects.select_related().filter(idreceta=self.kwargs.get('pk', None))
+
+
+
+    def __init__(self, *args, **kwargs):
+        self.receta = kwargs.pop('receta')
+        super(CreatePaso, self).__init__(*args, **kwargs)
+	
+    def save(self, commit=True, force_insert=False, force_update=False, *args, **kwargs):
+        m = super(CreatePaso, self).save(commit=False, *args, **kwargs)
+	m.idreceta_id = self.receta
+	m.save()
+
