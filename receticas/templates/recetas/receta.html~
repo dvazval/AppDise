@@ -2,18 +2,18 @@
 
 <article>
 	<div class="heading">
-		<p><h2>{{ object.nombre }}</h2></p>
+		<p><h2>{{ receta.nombre }}</h2></p>
 	</div>
 	<div class="content">
-		<p>Nombre: {{ object.nombre }}</p>
-		<p>Descripcion: {{ object.descripcion }}</p>
+		<p>Nombre: {{ receta.nombre }}</p>
+		<p>Descripcion: {{ receta.descripcion }}</p>
 	</div>
 	<div class="heading">
 		<p><h2>Ingredientes</h2></p>
 	</div>
 	<div class="content">
 		{% for ingrediente in ingredientes %}
-			<p>Nombre: {{ ingrediente.idingrediente }}</p>
+			<p>Nombre: {{ ingrediente.Ingrediente.articulo }}</p>
 		{% empty %}
 			<p>No tiene ingredientes todavia.</p>
 		{% endfor %}
