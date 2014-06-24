@@ -169,7 +169,7 @@ class DjangoSite(models.Model):
         db_table = 'django_site'
 
 class Ingrediente(models.Model):
-    idingrediente = models.IntegerField(unique=True)
+    idingrediente = models.IntegerField(unique=True, primary_key=True)
     articulo = models.CharField(max_length=1024, blank=True)
     marca = models.CharField(max_length=1024, blank=True)
     tipo = models.CharField(max_length=1024, blank=True)
@@ -182,7 +182,7 @@ class Ingrediente(models.Model):
         db_table = 'ingrediente'
 
 class IngredienteXReceta(models.Model):
-    idingrediente = models.ForeignKey(Ingrediente, db_column='idingrediente')
+    idingrediente = models.ForeignKey(Ingrediente, db_column='idingrediente', primary_key=True)
     idreceta = models.ForeignKey('Receta', db_column='idreceta')
     class Meta:
         managed = False
