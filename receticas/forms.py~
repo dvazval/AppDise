@@ -89,7 +89,7 @@ class CreatePaso(ModelForm):
 	m.save()
 
 
-class CreatePaso(ModelForm):
+class CreateIngrediente(ModelForm):
     class Meta:
         model = IngredienteXReceta
 	exclude = ('idreceta',)
