@@ -227,7 +227,7 @@ class IngredientesListView(ListView):
 
 class IngredienteCreate(CreateView):
     template_name = "recetas/formGeneral.html"
-    model = IngredienteXReceta
+    #model = IngredienteXReceta
     form_class = CreateIngrediente
 
     def get_form_kwargs(self):
