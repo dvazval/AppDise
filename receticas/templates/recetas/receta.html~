@@ -13,9 +13,9 @@
 	</div>
 	<div class="content">
 		{% for ingrediente in ingredientes %}
-			<p>Nombre: {{ ingrediente.idingrediente.articulo }}</p>
+			<p>{{ ingrediente.idingrediente.articulo }} de {{ ingrediente.idingrediente.peso }} a {{ ingrediente.idingrediente.precio }}</p>
 		{% empty %}
-			<p>No tiene ingredientes todavia.</p>
+			<p>No tiene ingredientes.</p>
 		{% endfor %}
 	</div>
 	<div class="heading">
@@ -23,10 +23,9 @@
 	</div>
 	<div class="content">
 		{% for paso in pasos %}
-			<p>Nombre: {{ paso.pasonumero }}</p>
-			<p>Descripcion: {{ paso.contenido }}</p> 
+			<p>{{ paso.pasonumero }}- {{ paso.contenido }} </p> 
 		{% empty %}
-			<p>No tiene pasos todavia.</p>
+			<p>No tiene pasos.</p>
 		{% endfor %}
 	</div>
 	<div class="content">
