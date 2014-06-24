@@ -29,12 +29,20 @@ def index(request):
 ########################################## RECETAS
 
 class RecetaDisplayView(DetailView):
-	#template_name = "recetas/receta.html"
-	
+        model=Receta
+
 	def get_context_data(self, **kwargs):
 		context = super(RecetaDisplayView, self).get_context_data(**kwargs)
-		context['receta']= Receta.objects.get(pk=self.kargs.get('receta_id', None))
+		context['receta']= Receta.objects.get(pk=self.kargs.get('pk', None))
 		return context
+
+	def get_queryset(self):
+		result = Recetario.objects.filter(pk=self.kwargs.get('pk', None))
+        	return result
+
+
+
+
 
 class RecetaListView(ListView):
 	#template_name = "recetas/receta.html"
