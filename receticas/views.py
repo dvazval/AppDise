@@ -225,8 +225,8 @@ class IngredientesListView(ListView):
 
 class IngredienteCreate(CreateView):
     template_name = "recetas/formGeneral.html"
-    model = Pasos
-    form_class = CreatePaso
+    model = IngredienteXReceta
+    form_class = CreateIngrediente
 
     def get_form_kwargs(self):
         kwargs = super(IngredienteCreate, self).get_form_kwargs()

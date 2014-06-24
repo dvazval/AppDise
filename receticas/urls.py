@@ -20,7 +20,7 @@ urlpatterns = patterns('',
     url(r'^login/$', 'auth.views.login_user'),
     url(r'^home/$', 'receticas.views.home'),
     url(r'^accounts/', include('allauth.urls')),
-    #url(r'^rece/', 'receticas.views.index'),
+    url(r'^rece/', 'receticas.views.index'),
     #################Recetas
     url(r'^recetas/(?P<pk>\d+)/$', RecetaDisplayView.as_view(
 	context_object_name="receta",
@@ -80,7 +80,7 @@ urlpatterns = patterns('',
     url(r'^ingredientes/(?P<pk>\d+)/$', IngredientesListView.as_view(
 	context_object_name="ingredientes",
 	template_name= "ingredientes/lista-ingredientes-receta.html",
-	), name="pasosReceta"),
+	), name="ingredientesReceta"),
     url(r'ingrediente/add/(?P<pk>\d+)/$', IngredienteCreate.as_view(), name='ingrediente_add'),
     url(r'ingrediente/(?P<pk>\d+)/delete/$', IngredienteDelete.as_view(), name='ingrediente_delete'),
     #####################Junnar

@@ -92,7 +92,7 @@ class CreatePaso(ModelForm):
 class CreatePaso(ModelForm):
     class Meta:
         model = IngredienteXReceta
-	exclude = ('idreceta')
+	exclude = ('idreceta',)
 
     def __init__(self, *args, **kwargs):
         self.receta = kwargs.pop('receta')
