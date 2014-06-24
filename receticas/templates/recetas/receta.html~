@@ -8,6 +8,27 @@
 		<p>Nombre: {{ object.nombre }}</p>
 		<p>Descripcion: {{ object.descripcion }}</p>
 	</div>
+	<div class="heading">
+		<p><h2>Ingredientes</h2></p>
+	</div>
+	<div class="content">
+		{% for ingrediente in ingredientes %}
+			<p>Nombre: {{ ingrediente.idingrediente }}</p>
+		{% empty %}
+			<p>No tiene ingredientes todavia.</p>
+		{% endfor %}
+	</div>
+	<div class="heading">
+		<p><h2>Pasos</h2></p>
+	</div>
+	<div class="content">
+		{% for paso in pasos %}
+			<p>Nombre: {{ paso.pasonumero }}</p>
+			<p>Descripcion: {{ paso.contenido }}</p> 
+		{% empty %}
+			<p>No tiene pasos todavia.</p>
+		{% endfor %}
+	</div>
 	<div class="content">
 		<div class="fb-like" data-href="http://www.receticas.biz/recetas/{{ object.idreceta }}/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
 	</div>
