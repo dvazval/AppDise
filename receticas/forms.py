@@ -92,7 +92,7 @@ class CreatePaso(ModelForm):
 class CreateIngrediente(ModelForm):
     class Meta:
         model = IngredienteXReceta
-	exclude = ('idreceta',)
+	#exclude = ('idreceta',)
 	
 	idingrediente = forms.ChoiceField(choices= [ (o.idingrediente, o.articulo  ) for o in Ingrediente.objects.all()])
 
