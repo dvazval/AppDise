@@ -230,7 +230,7 @@ class IngredienteCreate(CreateView):
 
     def get_form_kwargs(self):
         kwargs = super(IngredienteCreate, self).get_form_kwargs()
-        kwargs['idreceta'] = self.kwargs.get('pk', None)
+        kwargs['receta'] = self.kwargs.get('pk', None)
         return kwargs
     success_url = reverse_lazy('misreceticas')
     #fields = ['idreceta','nombre','tiempo','descripcion']

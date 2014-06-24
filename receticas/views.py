@@ -10,6 +10,8 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.core.urlresolvers import reverse_lazy
 
 from forms import *
+from django.contrib.auth.decorators import login_required
+
 
 
 from models import Receta, Recetario
