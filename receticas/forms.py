@@ -102,7 +102,7 @@ class CreateIngrediente(ModelForm):
 	    (1, 'Rock'),
 	    (2, 'Hard Place')
 	]
-	idingrediente = forms.ChoiceField(choices= CHOICE_LIST ]) #[ (o.idingrediente.idingrediente, o.idingrediente.articulo  ) for o in IngredienteXReceta.objects.select_related().filter(idreceta=self.receta)])
+	idingrediente = forms.ChoiceField(choices= CHOICE_LIST) #[ (o.idingrediente.idingrediente, o.idingrediente.articulo  ) for o in IngredienteXReceta.objects.select_related().filter(idreceta=self.receta)])
 #o.idingrediente.articulo
     def save(self, commit=True, force_insert=False, force_update=False, *args, **kwargs):
         m = super(CreateIngrediente, self).save(commit=False, *args, **kwargs)
