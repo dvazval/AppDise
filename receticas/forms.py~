@@ -100,11 +100,11 @@ class CreateIngrediente(ModelForm):
         super(CreateIngrediente, self).__init__(*args, **kwargs)
 	self.fields['idingredienteTemp'] = forms.ChoiceField(choices= [ (o, o.articulo  ) for o in Ingrediente.objects.all()])
 	
-    def save(self, commit=True, force_insert=False, force_update=False, *args, **kwargs):
-        m = super(CreateIngrediente, self).save(commit=False, *args, **kwargs)
+    #def save(self, commit=True, force_insert=False, force_update=False, *args, **kwargs):
+        #m = super(CreateIngrediente, self).save(commit=False, *args, **kwargs)
 	#m.idingrediente_id = 10 #Ingrediente.objects.get(pk=self.fields['idingredienteTemp'].idingrediente)     
 	#m.idreceta_id = self.receta
-	m.save()
+	#m.save()
 
 
 	
