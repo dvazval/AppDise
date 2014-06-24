@@ -94,7 +94,7 @@ class CreateIngrediente(ModelForm):
         #model = IngredienteXReceta
 	exclude = ('idreceta',)
 	
-	idingrediente = forms.ChoiceField(choices= [ (o.idingrediente, o.articulo  ) for o in Ingrediente.objects])
+	idingrediente = forms.ChoiceField(choices= [ (o.idingrediente, o.articulo  ) for o in Ingrediente.objects.all()])
 
     def __init__(self, *args, **kwargs):
         self.receta = kwargs.pop('receta')
