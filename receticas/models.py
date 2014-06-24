@@ -182,7 +182,7 @@ class Ingrediente(models.Model):
         db_table = 'ingrediente'
 
 class IngredienteXReceta(models.Model):
-    idingrediente = models.ForeignKey(Ingrediente, db_column='idingrediente')
+    idingrediente = models.ForeignKey(Ingrediente, db_column='idingrediente', primary_key=True)
     idreceta = models.ForeignKey('Receta', db_column='idreceta')
     class Meta:
         managed = False
