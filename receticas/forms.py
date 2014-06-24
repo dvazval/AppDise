@@ -94,7 +94,7 @@ class CreatePaso(ModelForm):
         model = IngredienteXReceta
 	exclude = ('idreceta')
 
-    idingrediente = forms.ChoiceField(choices=[ (o.idingrediente, o.articulo  ) for o in IngredienteXReceta.objects.select_related().filter(idreceta=self.kwargs.get('pk', None))
+    idingrediente = forms.ChoiceField(choices=[ (o.idingrediente, o.articulo  ) for o in IngredienteXReceta.objects.select_related().filter(idreceta=self.kwargs.get('pk', None)))
 
 
 
