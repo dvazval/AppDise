@@ -102,7 +102,7 @@ class CreateIngrediente(ModelForm):
 	
     def save(self, commit=True, force_insert=False, force_update=False, *args, **kwargs):
         m = super(CreateIngrediente, self).save(commit=False, *args, **kwargs)
-	m.idingrediente_id = Ingrediente.objects.get(pk=self.fields['idingredienteTemp'].get(value, u'') )   
+	m.idingrediente_id = Ingrediente.objects.get(pk=self.fields['idingredienteTemp'].value )   
 	m.idreceta_id = self.receta
 	m.save()
 	
