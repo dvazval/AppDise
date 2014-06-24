@@ -8,6 +8,8 @@
                      by 
                     <a target="_blank" href="#">ReceTicas.biz</a>
                 </p>
+		<div class="fb-follow" data-href="https://www.facebook.com/ReceTicas" data-colorscheme="light" data-layout="standard" data-show-faces="true"></div>
+<div class="fb-like-box" data-href="https://www.facebook.com/ReceTicas" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
             </footer>
         </body>
     </html>
