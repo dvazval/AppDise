@@ -1,0 +1,23 @@
+{% include "baseHeader.html" %}
+
+<article>
+	<div class="heading">
+		<p><h2> Recetarios </h2></p>
+	</div>
+	<div class="content">
+		<a href="http://www.receticas.biz/paso/add/{{  receta }}/"> agregar </a> 
+		<ul>
+			{% for paso in object_list %}
+			    <li>
+	{{ paso.pasonumero }} - {{ paso.contenido }} 
+	| <a href="http://www.receticas.biz/paso/{{  paso.idpaso }}/"> Editar </a>  
+	| <a href="http://www.receticas.biz/paso/{{  paso.idpaso }}/delete/"> Borrar </a>
+				</li>
+			{% empty %}
+			    <li>No hay pasos.</li>
+			{% endfor %}
+			</ul>
+	</div>								
+</article>
+
+{% include "baseFooter.html" %}

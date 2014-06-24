@@ -211,3 +211,33 @@ class PasoDelete(DeleteView):
     success_url = reverse_lazy('misreceticas')
 
 
+
+#################### Ingredientes
+class IngredientesListView(ListView):
+	def get_context_data(self, **kwargs):
+		context = super(IngredientesListView, self).get_context_data(**kwargs)
+		context['receta']=  IngredienteXReceta.objects.select_related().filter(idreceta=self.kwargs.get('pk', None))
+		return context
+
+	def get_queryset(self):
+		result =  IngredienteXReceta.objects.select_related().filter(idreceta=self.kwargs.get('pk', None))
+        	return result
+
+class IngredienteCreate(CreateView):
+    template_name = "recetas/formGeneral.html"
+    model = Pasos
+    form_class = CreatePaso
+
+    def get_form_kwargs(self):
+        kwargs = super(IngredienteCreate, self).get_form_kwargs()
+        kwargs['receta'] = self.kwargs.get('pk', None)
+        return kwargs
+    success_url = reverse_lazy('misreceticas')
+    #fields = ['idreceta','nombre','tiempo','descripcion']
+
+class IngredienteDelete(DeleteView):
+    template_name = "recetas/formGeneral.html"
+    model = Pasos
+    success_url = reverse_lazy('misreceticas')
+
+

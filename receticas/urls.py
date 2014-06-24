@@ -77,7 +77,12 @@ urlpatterns = patterns('',
     url(r'paso/add/(?P<pk>\d+)/$', PasoCreate.as_view(), name='paso_add'),
     url(r'paso/(?P<pk>\d+)/delete/$', PasoDelete.as_view(), name='paso_delete'),
     ####################Ingredientes
-
+    url(r'^ingredientes/(?P<pk>\d+)/$', IngredientesListView.as_view(
+	context_object_name="ingredientes",
+	template_name= "ingredientes/lista-ingredientes-receta.html",
+	), name="pasosReceta"),
+    url(r'ingrediente/add/(?P<pk>\d+)/$', IngredienteCreate.as_view(), name='ingrediente_add'),
+    url(r'ingrediente/(?P<pk>\d+)/delete/$', IngredienteDelete.as_view(), name='ingrediente_delete'),
     #####################Junnar
 
 )
