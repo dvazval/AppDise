@@ -96,12 +96,19 @@ class CreateIngrediente(ModelForm):
 	exclude = ('idreceta',)
 	
 	idingrediente = forms.ChoiceField(choices= [ ('Dasda', 'asdads'  ) for o in Ingrediente.objects.all()])
-	# o.idingrediente, o.articulo
+	# 
     def __init__(self, *args, **kwargs):
         self.receta = kwargs.pop('receta')
         super(CreateIngrediente, self).__init__(*args, **kwargs)
-	self.fields['idingrediente'] = forms.ChoiceField(choices= [ ('Dasda', 'asdads'  ) for o in Ingrediente.objects.all()])
+	self.fields['idingrediente'] = forms.ChoiceField(choices= [ (o.idingrediente, o.articulo  ) for o in Ingrediente.objects.all()])
 	
+    def save(self, commit=True, force_insert=False, force_update=False, *args, **kwargs):
+        m = super(CreateIngrediente, self).save(commit=False, *args, **kwargs)
+        #m.idpaso = Pasos.objects.latest('idpaso').idpaso + 1
+	m.idreceta_id = self.receta
+	m.save()
+
+
 	
 #o.idingrediente.articulo
     def save(self, commit=True, force_insert=False, force_update=False, *args, **kwargs):
