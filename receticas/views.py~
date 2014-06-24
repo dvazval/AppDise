@@ -35,7 +35,7 @@ class RecetaDisplayView(DetailView):
 		context = super(RecetaDisplayView, self).get_context_data(**kwargs)
 		context['receta']= Receta.objects.get(pk=self.kwargs.get('pk', None))
 		context['pasos']= Pasos.objects.filter(idreceta=self.kwargs.get('pk', None))
-		context['ingredientes']= IngredienteXReceta.objects.select_related().get(idreceta=self.kwargs.get('pk', None))
+		context['ingredientes']= IngredienteXReceta.objects.select_related().filter(idreceta=self.kwargs.get('pk', None))
                 #IngredienteXReceta.objects.filter(idreceta=self.kwargs.get('pk', None))
 		return context
 

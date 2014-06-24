@@ -23,8 +23,7 @@
 	</div>
 	<div class="content">
 		{% for paso in pasos %}
-			<p>Nombre: {{ paso.pasonumero }}</p>
-			<p>Descripcion: {{ paso.contenido }}</p> 
+			<p>{{ paso.pasonumero }}- {{ paso.contenido }} </p> 
 		{% empty %}
 			<p>No tiene pasos todavia.</p>
 		{% endfor %}
