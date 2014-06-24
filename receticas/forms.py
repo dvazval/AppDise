@@ -105,6 +105,7 @@ class CreateIngrediente(ModelForm):
     def save(self, commit=True, force_insert=False, force_update=False, *args, **kwargs):
         m = super(CreateIngrediente, self).save(commit=False, *args, **kwargs)
         #m.idpaso = Pasos.objects.latest('idpaso').idpaso + 1
+	m.idingrediente_id = selff.ields['idingrediente']
 	m.idreceta_id = self.receta
 	m.save()
 
