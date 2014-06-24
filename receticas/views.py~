@@ -33,7 +33,7 @@ class RecetaDisplayView(DetailView):
 
 	def get_context_data(self, **kwargs):
 		context = super(RecetaDisplayView, self).get_context_data(**kwargs)
-		context['receta']= Receta.objects.get(pk=self.kargs.get('pk', None))
+		context['receta']= Receta.objects.get(pk=self.kwargs.get('pk', None))
 		context['pasos']= Pasos.objects.get(idreceta=self.kwargs.get('pk', None))
 		context['ingredientes']= IngredienteXReceta.objects.get(idreceta=self.kwargs.get('pk', None))
 		return context
