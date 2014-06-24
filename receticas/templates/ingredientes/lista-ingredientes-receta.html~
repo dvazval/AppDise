@@ -11,7 +11,7 @@
 			    <li>
 {{ ingrediente.idingrediente.peso }} {{ ingrediente.idingrediente.tipo }} |  {{ ingrediente.idingrediente.articulo }} 
 |{{ ingrediente.idingrediente.precio }} colones.  
-	| <a href="http://www.receticas.biz/ingrediente/{{  ingrediente.ingrediente }}/delete/"> Borrar </a>
+	| <a href="http://www.receticas.biz/ingrediente/{{  ingrediente.idingrediente.idingrediente }}/delete/"> Borrar </a>
 				</li>
 			{% empty %}
 			    <li>No hay pasos.</li>

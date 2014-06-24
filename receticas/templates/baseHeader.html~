@@ -82,9 +82,6 @@
                     <li>
                         <a href="{% url 'recetas' %}">Recetas</a>
                     </li>
-                    <li>
-                        <a href="single.html">Acerca de ReceTicas</a>
-                    </li>
 		    {% if request.user.is_authenticated %}
 		    <li>
                         <a href="{% url 'misreceticas' %}">Mis receticas</a>
@@ -107,7 +104,6 @@
 				<option value="http://www.receticas.biz/rece/">Inicio</option>
 				<option value="{% url 'recetarios' %}">Recetarios</option>
 				<option value="{% url 'recetas' %}">Recetas</option>
-				<option value="single.html">Acerca de ReceTicas</option>
 				{% if request.user.is_authenticated %}
 					<option value="/accounts/logout/">Login</option>
 				{% else %}
