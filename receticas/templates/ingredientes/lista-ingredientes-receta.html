@@ -5,13 +5,13 @@
 		<p><h2> Recetarios </h2></p>
 	</div>
 	<div class="content">
-		<a href="http://www.receticas.biz/paso/add/{{  ingrediente.idreceta }}/"> agregar </a> 
+		<a href="http://www.receticas.biz/paso/add/{{  receta }}/"> agregar </a> 
 		<ul>
 			{% for ingrediente in object_list %}
 			    <li>
 {{ ingrediente.idingrediente.peso }} {{ ingrediente.idingrediente.tipo }} |  {{ ingrediente.idingrediente.articulo }} 
 |{{ ingrediente.idingrediente.precio }} colones.  
-	| <a href="http://www.receticas.biz/ingrediente/{{  ingrediente.ingrediente }}/delete/"> Borrar </a>
+	| <a href="http://www.receticas.biz/ingrediente/{{  ingrediente.idingrediente }}/delete/"> Borrar </a>
 				</li>
 			{% empty %}
 			    <li>No hay pasos.</li>
