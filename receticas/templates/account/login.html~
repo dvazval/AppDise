@@ -1,4 +1,4 @@
-{% extends "account/base.html" %}
+{% include "baseHeader.html" %}
 
 {% load i18n %}
 {% load account %}
@@ -18,8 +18,8 @@
             <input id="id_password" class="login-input" name="password" placeholder="Contraseña" type="password" />{{ form.password.errors }}<br>
             <div class="remember-forgot-section">
                 <input id="id_remember" name="remember" type="checkbox" />
-                <label for="id_remember">Remember Me</label>
-                <a class="forgot" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+                <label for="id_remember">Recordarme</label>
+                <a class="forgot" href="{% url 'account_reset_password' %}">{% trans "¿Olvido contraseña?" %}</a>
             </div>
           {% if redirect_field_value %}
           <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
@@ -29,7 +29,9 @@
         </form>
 
         <div class="footnote">
-            Don't have an account? Login with Facebook above or <a href="{% url 'account_signup' %}">Sign Up</a>
+            ¿No tiene una cuenta? Inicie sesión con Facebook o  <a href="{% url 'account_signup' %}">Registrese</a>
         </div>
     </div>
 {% endblock %}
+
+{% include "baseFooter.html" %}
