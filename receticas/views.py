@@ -216,7 +216,7 @@ class PasoDelete(DeleteView):
 class IngredientesListView(ListView):
 	def get_context_data(self, **kwargs):
 		context = super(IngredientesListView, self).get_context_data(**kwargs)
-		context['receta']=  IngredienteXReceta.objects.select_related().filter(idreceta=self.kwargs.get('pk', None))
+		context['receta']=  self.kwargs.get('pk', None)
 		return context
 
 	def get_queryset(self):
