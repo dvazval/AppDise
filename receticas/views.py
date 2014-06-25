@@ -42,7 +42,7 @@ class RecetaDisplayView(DetailView):
 		return context
 
 	def get_queryset(self):
-		result = Recetario.objects.filter(pk=self.kwargs.get('pk', None))
+		result = Receta.objects.filter(pk=self.kwargs.get('pk', None))
         	return result
 
 
