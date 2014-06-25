@@ -35,8 +35,8 @@ header {width:960px;height: 130px; position:relative; margin: 0px auto;}
 header #logo {position:absolute; top:40px; left: 30px; width: 100%;}
 
 header #search {position: absolute;top: 60px;right: 20px;	width: 208px;z-index: 15;}
-header .button-search {	position: absolute;	left: 0px;	background:url('../images/button-search.png') center center no-repeat;	width: 28px;	height: 24px;	border-right: 1px solid #CCCCCC;	cursor: pointer;}
-header #search input {	background: #FFF;	padding: 1px 1px 1px 33px;	width: 172px;	height: 21px;	border: 1px solid #CCCCCC;	-webkit-border-radius: 3px 3px 3px 3px;	-moz-border-radius: 3px 3px 3px 3px;	-khtml-border-radius: 3px 3px 3px 3px;	border-radius: 3px 3px 3px 3px;}
+header .button-search {	position: absolute;	left: 0px;	background:url('../images/button-search.png') center center no-repeat;	width: 28px;	height: 24px;	border-right: 1px solid #000;	cursor: pointer;}
+header #search input {	background: #FFF;	padding: 1px 1px 1px 33px;	width: 172px;	height: 21px;	border: 1px solid #000000;	-webkit-border-radius: 3px 3px 3px 3px;	-moz-border-radius: 3px 3px 3px 3px;	-khtml-border-radius: 3px 3px 3px 3px;	border-radius: 3px 3px 3px 3px;}
 
 /*------------Navigation and Pagination */
 nav {width:780px; margin:0 auto; position:relative;height: 55px; background:#347E03; border-bottom:1px solid #FFFFFF;
@@ -45,7 +45,7 @@ nav ul {list-style: none;margin: 0;padding-left: 10px;}
 nav ul li {position: relative;float: left;padding: 6px 5px 0px 5px; background:url(../images/menu_separator.png) no-repeat right;}
 nav ul li:hover{background-color:#000000;}
 nav ul li a {font-size: 16px; line-height:16px;color: #000;display: block;padding: 15px 20px;margin-bottom: 5px;z-index: 6;position: relative;font-weight:bold; text-transform:uppercase;}
-nav ul li:hover a{color:#000;}
+nav ul li:hover a{color:#ffffff;}
 
 #pagi{ clear: both; margin: 30px auto;padding: 0;list-style: none;width: 180px;}
 #pagi li {float: left;margin-right: 10px;}
@@ -53,7 +53,7 @@ nav ul li:hover a{color:#000;}
 	-webkit-border-radius: 3px;	-moz-border-radius: 3px;	border-radius: 3px;
 	background: #ffffff;
 }
-#pagi li a.current, #pagi li a:hover {color: #ffffff;	background: #347E03;}
+#pagi li a.current, #pagi li a:hover {color: #000000;	background: #347E03;}
 
 
 /*-------------content */
