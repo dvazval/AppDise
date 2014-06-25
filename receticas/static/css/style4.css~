@@ -53,7 +53,7 @@ nav ul li:hover a{color:#ffffff;}
 	-webkit-border-radius: 3px;	-moz-border-radius: 3px;	border-radius: 3px;
 	background: #ffffff;
 }
-#pagi li a.current, #pagi li a:hover {color: #ffffff;	background: #347E03;}
+#pagi li a.current, #pagi li a:hover {color: #000000;	background: #347E03;}
 
 
 /*-------------content */
