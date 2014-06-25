@@ -33,9 +33,9 @@ urlpatterns = patterns('',
 	model=Receta,
 	template_name= "recetas/lista-recetas.html",
 	), name="recetas"),
-    url(r'recet/add/(?P<pk>\d+)/$', RecetaCreate.as_view(), name='receta_add'),
-    url(r'recet/(?P<pk>\d+)/$', RecetaUpdate.as_view(), name='receta_update'),
-    url(r'recet/(?P<pk>\d+)/delete/$', RecetaDelete.as_view(), name='receta_delete'),
+    url(r'recet/add/(?P<pk>\d+)/$', login_required(RecetaCreate.as_view()), name='receta_add'),
+    url(r'recet/(?P<pk>\d+)/$', login_required(RecetaUpdate.as_view()), name='receta_update'),
+    url(r'recet/(?P<pk>\d+)/delete/$', login_required(RecetaDelete.as_view()), name='receta_delete'),
     ##################Recetarios
     url(r'^recetarios/(?P<pk>\d+)/$', RecetarioDisplayView.as_view(
 	context_object_name="recetario",
@@ -48,15 +48,15 @@ urlpatterns = patterns('',
 	model=Recetario,
 	template_name= "recetarios/lista-recetarios.html",
 	), name="recetarios"),
-    url(r'^recetasRecetario/(?P<pk>\d+)/$', RecetarioRecetasListView.as_view(
+    url(r'^recetasRecetario/(?P<pk>\d+)/$', login_required(RecetarioRecetasListView.as_view(
 	context_object_name="receta",
 	#model=Receta,
 	#paginate_by = '5',
 	template_name= "recetas/lista-recetas.html",
-	), name="receta"),
-    url(r'recetario/(?P<pk>\d+)/$', RecetarioUpdate.as_view(), name='recetario_update'),
-    url(r'recetario/add/$', RecetarioCreate.as_view(), name='recetario_add'),
-    url(r'recetario/(?P<pk>\d+)/delete/$', RecetarioDelete.as_view(), name='recetario_delete'),
+	)), name="receta"),
+    url(r'recetario/(?P<pk>\d+)/$', login_required(RecetarioUpdate.as_view()), name='recetario_update'),
+    url(r'recetario/add/$', login_required(RecetarioCreate.as_view()), name='recetario_add'),
+    url(r'recetario/(?P<pk>\d+)/delete/$', login_required(RecetarioDelete.as_view()), name='recetario_delete'),
     #####################Panel Admin
     url(r'^misreceticas/$', login_required(MisReceticasListView.as_view(
 	context_object_name="recetario",
@@ -64,25 +64,25 @@ urlpatterns = patterns('',
 	#paginate_by = '5',
 	template_name= "recetarios/lista-mis-recetarios.html",
 	)), name="misreceticas"),
-    url(r'^recetasRecetarioUsuario/(?P<pk>\d+)/$', RecetarioRecetasUsuarioListView.as_view(
+    url(r'^recetasRecetarioUsuario/(?P<pk>\d+)/$', login_required(RecetarioRecetasUsuarioListView.as_view(
 	context_object_name="receta",
 	template_name= "recetas/lista-recetas-usuario.html",
-	), name="recetasRecetarioUsuario"),
+	)), name="recetasRecetarioUsuario"),
     ####################PASOS
-    url(r'^pasos/(?P<pk>\d+)/$', PasosListView.as_view(
+    url(r'^pasos/(?P<pk>\d+)/$', login_required(PasosListView.as_view(
 	context_object_name="pasos",
 	template_name= "pasos/lista-pasos-receta.html",
-	), name="pasosReceta"),
-    url(r'paso/(?P<pk>\d+)/$', PasoUpdate.as_view(), name='paso_update'),
-    url(r'paso/add/(?P<pk>\d+)/$', PasoCreate.as_view(), name='paso_add'),
-    url(r'paso/(?P<pk>\d+)/delete/$', PasoDelete.as_view(), name='paso_delete'),
+	)), name="pasosReceta"),
+    url(r'paso/(?P<pk>\d+)/$', login_required(PasoUpdate.as_view()), name='paso_update'),
+    url(r'paso/add/(?P<pk>\d+)/$', login_required(PasoCreate.as_view()), name='paso_add'),
+    url(r'paso/(?P<pk>\d+)/delete/$', login_required(PasoDelete.as_view()), name='paso_delete'),
     ####################Ingredientes
-    url(r'^ingredientes/(?P<pk>\d+)/$', IngredientesListView.as_view(
+    url(r'^ingredientes/(?P<pk>\d+)/$', login_required(IngredientesListView.as_view(
 	context_object_name="ingredientes",
 	template_name= "ingredientes/lista-ingredientes-receta.html",
-	), name="ingredientesReceta"),
-    url(r'ingrediente/add/(?P<pk>\d+)/$', IngredienteCreate.as_view(), name='ingrediente_add'),
-    url(r'ingrediente/(?P<pk>\d+)/delete/$', IngredienteDelete.as_view(), name='ingrediente_delete'),
+	)), name="ingredientesReceta"),
+    url(r'ingrediente/add/(?P<pk>\d+)/$', login_required(IngredienteCreate.as_view()), name='ingrediente_add'),
+    url(r'ingrediente/(?P<pk>\d+)/delete/$', login_required(IngredienteDelete.as_view()), name='ingrediente_delete'),
     #####################Junnar
 
 )

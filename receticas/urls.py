@@ -12,9 +12,7 @@ from models import Receta, Recetario
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Examples:
     url(r'^$', 'receticas.views.index'),
-    # url(r'^blog/', include('blog.urls')),
     url(r'^accounts/logout/$', 'django.contrib.auth.views.logout', {'next_page': '/rece/'}),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^login/$', 'auth.views.login_user'),
@@ -83,6 +81,5 @@ urlpatterns = patterns('',
 	)), name="ingredientesReceta"),
     url(r'ingrediente/add/(?P<pk>\d+)/$', login_required(IngredienteCreate.as_view()), name='ingrediente_add'),
     url(r'ingrediente/(?P<pk>\d+)/delete/$', login_required(IngredienteDelete.as_view()), name='ingrediente_delete'),
-    #####################Junnar
 
 )

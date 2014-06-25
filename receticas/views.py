@@ -17,6 +17,9 @@ from django.contrib.auth.decorators import login_required
 from models import Receta, Recetario
 
 
+
+
+
 def home(request):
     if request.user.is_authenticated():
         return HttpResponseRedirect()
@@ -30,11 +33,15 @@ def index(request):
 
 ########################################## RECETAS
 
+
+###Clase para el view que muestra una receta especifica
+
 class RecetaDisplayView(DetailView):
         model=Receta
 
 	def get_context_data(self, **kwargs):
 		context = super(RecetaDisplayView, self).get_context_data(**kwargs)
+		### Se obtienen los datos desde la base de datos
 		context['receta']= Receta.objects.get(pk=self.kwargs.get('pk', None))
 		context['pasos']= Pasos.objects.filter(idreceta=self.kwargs.get('pk', None)).order_by('pasonumero')
 		context['ingredientes']= IngredienteXReceta.objects.select_related().filter(idreceta=self.kwargs.get('pk', None))
@@ -45,17 +52,17 @@ class RecetaDisplayView(DetailView):
 		result = Receta.objects.filter(pk=self.kwargs.get('pk', None))
         	return result
 
-
-
-
+###Clase para el view que muestra todas las recetas de lector
 
 class RecetaListView(ListView):
-	#template_name = "recetas/receta.html"
 	
+	#Override para definir el contexto
 	def get_context_data(self, **kwargs):
 		context = super(RecetaListView, self).get_context_data(**kwargs)
 		context['recetas']= Receta.objects
 		return context
+
+### Clase para la creacion de una receta
 
 class RecetaCreate(CreateView):
     template_name = "recetas/formGeneral.html"
@@ -66,8 +73,10 @@ class RecetaCreate(CreateView):
         kwargs = super(RecetaCreate, self).get_form_kwargs()
         kwargs['recetario'] = self.kwargs.get('pk', None)
         return kwargs
+     
     success_url = reverse_lazy('misreceticas')
-    #fields = ['idreceta','nombre','tiempo','descripcion']
+
+### Clase para el update de una receta
 
 class RecetaUpdate(UpdateView):
     template_name = "recetas/formGeneral.html"
@@ -75,17 +84,19 @@ class RecetaUpdate(UpdateView):
     fields = ['nombre','tiempo','descripcion']
     success_url = reverse_lazy('misreceticas')
 
+### Clase para borrar una receta
 
 class RecetaDelete(DeleteView):
     template_name = "recetas/formGeneral.html"
     model = Receta
     success_url = reverse_lazy('misreceticas')
 
-
-
 ########################################## RECETARIOS
+
+
+## Clase para mostrar la vista detallada de un Recetario
+
 class RecetarioDisplayView(DetailView):
-	#template_name = "recetas/receta.html"
 	model=Recetario
 
 	def get_context_data(self, **kwargs):
@@ -97,20 +108,21 @@ class RecetarioDisplayView(DetailView):
 		result = Recetario.objects.filter(pk=self.kwargs.get('pk', None))
         	return result
 
+## Vista detallada de un recetario
+
 class RecetarioListView(ListView):
-	#template_name = "recetas/receta.html"
 	
 	def get_context_data(self, **kwargs):
 		context = super(RecetarioListView, self).get_context_data(**kwargs)
 		context['recetarios']= Recetario.objects
 		return context
 
+## Vista de las recetas de un recetario 
+
 class RecetarioRecetasListView(ListView):
-	#template_name = "recetas/receta.html"
 	
 	def get_context_data(self, **kwargs):
 		context = super(RecetarioRecetasListView, self).get_context_data(**kwargs)
-		#context['recetarios']= Recetario.objects
 		return context
 
 	def get_queryset(self):
@@ -118,7 +130,7 @@ class RecetarioRecetasListView(ListView):
         	return result
 
 
-
+## Clase para crear un recetario
 
 class RecetarioCreate(CreateView):
     template_name = "recetas/formGeneral.html"
@@ -133,23 +145,25 @@ class RecetarioCreate(CreateView):
 
     success_url = reverse_lazy('misreceticas')
 
+## Clase para actualizar un recetario
+
 class RecetarioUpdate(UpdateView):
     template_name = "recetas/formGeneral.html"
     model = Recetario
     fields = ['nombrer','descripcionr']
     success_url = reverse_lazy('misreceticas')
 
-
+## Clase para borrar un recetario
 
 class RecetarioDelete(DeleteView):
     template_name = "recetas/formGeneral.html"
     model = Recetario
     success_url = reverse_lazy('misreceticas')
 
+## Clase para mostrar la lista de las recetas asociadas con mi cuenta
 
 class MisReceticasListView(ListView):
-	#template_name = "recetas/receta.html"
-	
+
 	def get_context_data(self, **kwargs):
 		context = super(MisReceticasListView, self).get_context_data(**kwargs)
 		return context
@@ -158,26 +172,21 @@ class MisReceticasListView(ListView):
 		result = Recetario.objects.filter(idusuario=sessionIdusuario)
         	return result
 
+## Clase para Mostrar la lista de recetas 
 
 class RecetarioRecetasUsuarioListView(ListView):
-	#template_name = "recetas/receta.html"
 	
 	def get_context_data(self, **kwargs):
 		context = super(RecetarioRecetasUsuarioListView, self).get_context_data(**kwargs)
-		#context['recetarios']= Recetario.objects
 		return context
 
 	def get_queryset(self):
 		result = Receta.objects.filter(idrecetario=self.kwargs.get('pk', None))
         	return result
 
+## Clase para mostrar la lista de pasos 
 
-
-
-
-#################### PASOS
 class PasosListView(ListView):
-	#template_name = "recetas/receta.html"
 	
 	def get_context_data(self, **kwargs):
 		context = super(PasosListView, self).get_context_data(**kwargs)
@@ -187,6 +196,8 @@ class PasosListView(ListView):
 	def get_queryset(self):
 		result = Pasos.objects.filter(idreceta=self.kwargs.get('pk', None))
         	return result
+
+## Clase para crear pasos
 
 class PasoCreate(CreateView):
     template_name = "recetas/formGeneral.html"
@@ -198,7 +209,8 @@ class PasoCreate(CreateView):
         kwargs['receta'] = self.kwargs.get('pk', None)
         return kwargs
     success_url = reverse_lazy('misreceticas')
-    #fields = ['idreceta','nombre','tiempo','descripcion']
+
+## Clase para actualizar los pasos
 
 class PasoUpdate(UpdateView):
     template_name = "recetas/formGeneral.html"
@@ -206,6 +218,7 @@ class PasoUpdate(UpdateView):
     fields = ['pasonumero','contenido']
     success_url = reverse_lazy('misreceticas')
 
+## Clase para borrar los pasos
 
 class PasoDelete(DeleteView):
     template_name = "recetas/formGeneral.html"
@@ -215,6 +228,9 @@ class PasoDelete(DeleteView):
 
 
 #################### Ingredientes
+
+## Clase para mostrar los ingredientes
+
 class IngredientesListView(ListView):
 	def get_context_data(self, **kwargs):
 		context = super(IngredientesListView, self).get_context_data(**kwargs)
@@ -225,6 +241,8 @@ class IngredientesListView(ListView):
 		result =  IngredienteXReceta.objects.select_related().filter(idreceta=self.kwargs.get('pk', None))
         	return result
 
+## Clase para crear ingredientes
+
 class IngredienteCreate(CreateView):
     template_name = "recetas/formGeneral.html"
     form_class = CreateIngrediente
@@ -234,6 +252,8 @@ class IngredienteCreate(CreateView):
         kwargs['receta'] = self.kwargs.get('pk', None)
         return kwargs
     success_url = reverse_lazy('misreceticas')
+
+## Clase para borrar ingredientes
 
 class IngredienteDelete(DeleteView):
     template_name = "recetas/formGeneral.html"
