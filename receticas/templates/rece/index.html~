@@ -20,7 +20,7 @@
 		<p><h2>Pinchoz de vegetales asados.</h2></p>
 	</div>
 	<div class="content">
-		<img src="images/port1.jpg"/>
+		<img src="/static/images/port1.jpg"/>
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elite.</p>
 	</div>
 </article>
