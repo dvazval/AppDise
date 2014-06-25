@@ -45,7 +45,7 @@ nav ul {list-style: none;margin: 0;padding-left: 10px;}
 nav ul li {position: relative;float: left;padding: 6px 5px 0px 5px; background:url(../images/menu_separator.png) no-repeat right;}
 nav ul li:hover{background-color:#000000;}
 nav ul li a {font-size: 16px; line-height:16px;color: #000;display: block;padding: 15px 20px;margin-bottom: 5px;z-index: 6;position: relative;font-weight:bold; text-transform:uppercase;}
-nav ul li:hover a{color:#ffffff;}
+nav ul li:hover a{color:#000;}
 
 #pagi{ clear: both; margin: 30px auto;padding: 0;list-style: none;width: 180px;}
 #pagi li {float: left;margin-right: 10px;}
